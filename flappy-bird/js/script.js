@@ -1,10 +1,6 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
-//Drawuing a box
-//         x   y   Width height
 
-/* console.log(Math.random() > 0.5); // log false and true 50% of the time
-  //Math.random gives a random number from 0 to 0.9999999 */
 let score = 0;
 const player = {
   x: 175,
