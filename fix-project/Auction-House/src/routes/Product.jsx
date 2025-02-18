@@ -17,14 +17,15 @@ export function Product() {
       setData(data.data);
     }
     getData();
-  }, []);
+  }, [params.id]);
 
   return (
     <Layout>
       <div id="card" className="m-auto max-w-2xl">
         {data.id ? (
-          <div>
-            <h2>{data.title}</h2>
+          <div className="max-w-lg h-auto">
+            <h1>{data.title}</h1>
+
             {data.media.length && (
               <img
                 src={data.media[0].url}
@@ -35,18 +36,16 @@ export function Product() {
                 }}
               />
             )}
-            <p>{data.description}</p>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <p>created: {data.created}</p>
-            <p>updated: {data.updated}</p>
-            <p>ENDS_AT: {data.endsAt}</p>
-            <br />
-            <br />
-            <br />
+            <div className="p-4 border-b-2">
+              <p className="mb-4" title="Description">
+                {data.description}
+              </p>
+            </div>
+            <div className="p-4">
+              <p>created: {data.created}</p>
+              <p>updated: {data.updated}</p>
+              <p>ENDS_AT: {data.endsAt}</p>
+            </div>
           </div>
         ) : (
           <h2>loading</h2>
