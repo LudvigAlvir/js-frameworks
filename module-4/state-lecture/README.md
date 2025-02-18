@@ -1,8 +1,42 @@
-# React + Vite
+## How can we store data
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### variables (const, let)
 
-Currently, two official plugins are available:
+pros:
+Temporary
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+cons:
+Temporary
+Application does not react to the variable changing
+Can't be passed when opening in new tab(refresh)
+
+### useState
+
+Can't be passed when opening in new tab(refresh)
+Local to component, makes things more readable, easier to edit
+
+### stateStores (zustand, redux, context)
+
+Can't be passed when opening in new tab(refresh)
+global state, can access everywhere
+more side effects
+code can be harder to read when it gets complicated
+
+### localStorage 5mb
+
+Cons:
+Security
+Bugs persist
+
+Pros:
+Can be passed when opening in new tab
+
+### sessionStorage 5mb
+
+### cookies ( but not prefered for front end) 4kb
+
+### url (queries, params)
+
+Pros:
+can send information to other people
+save

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Edit } from "./routes/Edit.jsx";
 // Set up router in main.jsx
 const router = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/edit",
-    element: <h1>Edit page</h1>,
+    element: <Edit />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
@@ -19,3 +20,8 @@ createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </StrictMode>
 );
+/* 
+Redux
+Zustand
+Context (built in)
+*/
