@@ -10,8 +10,18 @@ function App() {
       <h1 className="text-amber-500">Todos</h1>
       <form
         action=""
-        onSubmit={() => {
-          //log out the value from our input
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(document.querySelector("#todo-input").value);
+          const value = document.querySelector("#todo-input").value;
+          setTodos([
+            ...todos,
+            {
+              id: todos[todos.length - 1].id + 1,
+              text: value,
+            },
+          ]);
+          console.log(todos);
         }}
       >
         <label htmlFor="todo-input">Todo item</label>
