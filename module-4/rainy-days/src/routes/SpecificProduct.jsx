@@ -1,23 +1,24 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useCart } from "../store";
 export function SpecificProduct() {
   const { id } = useParams();
   console.log(id);
   const [product, setProduct] = useState(false);
-
+  const { cart, addToCart } = useCart();
   const url = "https://v2.api.noroff.dev/rainy-days/";
 
-  console.log(url + id);
+  console.log(cart);
 
   useEffect(() => {
     async function getProduct() {
       const res = await fetch(url + id);
       const data = await res.json();
-      console.log(data);
+
       setProduct(data.data);
     }
     getProduct();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -39,6 +40,14 @@ export function SpecificProduct() {
           ) : (
             <p>{product.price}</p>
           )}
+          <button
+            className="border p-1"
+            onClick={() => {
+              addToCart(product);
+            }}
+          >
+            Purchase
+          </button>
         </div>
       ) : (
         <p>loading</p>
