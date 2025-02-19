@@ -1,0 +1,27 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { Products } from "./components/routes/Products";
+import { SpecificProduct } from "./components/routes/SpecificProduct";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <h1>Helloooooo</h1>,
+      },
+      { path: "products", element: <Products /> },
+      {
+        path: "product/:id",
+        element: <SpecificProduct />,
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
