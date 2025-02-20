@@ -1,8 +1,16 @@
-# React + Vite
+# Rainy Days
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+Use this project as starter code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tasks
+
+- Create a checkout page where a user can see their cart
+- Allow users to remove items from their cart
+- Refactor: Create components where applicable
+- Allow for filtering and sorting on the products page
+- Create a "Purchase" button that removes all items from the cart
+  **Harder task**
+- Instead of storing each product as a separate item in the cart, store each item as an object with a quantity property that can be modified
+- Implement persistent cart functionality to save the cart between sessions
