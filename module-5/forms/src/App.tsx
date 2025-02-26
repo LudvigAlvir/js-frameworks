@@ -37,9 +37,16 @@ function App() {
             setTitle(e.target.value);
           }}
         />
-        <textarea name="description" id="description" rows={7} cols={20}>
-          {description}
-        </textarea>
+        <textarea
+          name="description"
+          id="description"
+          rows={7}
+          cols={20}
+          value={description}
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
+        ></textarea>
 
         <button type="submit">Submit</button>
       </form>
